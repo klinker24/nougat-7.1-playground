@@ -14,7 +14,7 @@
             android:targetPackage="xyz.klinker.nougatplayground"
             android:action="android.intent.action.VIEW"
             android:targetClass="xyz.klinker.nougatplayground.MainActivity"
-            android:data="http://example.com/some_data_uri" />
+            android:data="https://klinkerapps.com/static_shortcut_data" />
 
         <!-- seems like the conversation category is the only one at this point? -->
         <categories android:name="android.shortcut.conversation" />

@@ -7,11 +7,13 @@ import android.content.pm.ShortcutManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Icon;
+import android.net.Uri;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 import xyz.klinker.nougatplayground.util.DensityUtil;
@@ -38,7 +40,10 @@ public class DynamicShortcutHelper {
         for (String title : titles) {
             Intent messenger = new Intent(context, MainActivity.class);
             messenger.setAction(Intent.ACTION_VIEW);
-            messenger.putExtra(MainActivity.EXTRA_SHORTCUT_TITLE, title);
+
+            // example of a web link that you can open in your app
+            // should probably be some kind of ID or something representing the shortcut you clicked
+            messenger.setData(Uri.parse("https://klinkerapps.com/" + title.toLowerCase(Locale.US).replace(" ", "_")));
 
             Set<String> category = new HashSet<>();
             category.add("android.shortcut.conversation");

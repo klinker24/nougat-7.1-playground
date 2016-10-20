@@ -6,13 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 
 public class MainActivity extends AppCompatActivity implements ImageKeyboardEditText.ImageSelectedCallback {
-
-    public static final String EXTRA_SHORTCUT_TITLE = "extra_shortcut_title";
 
     private Button writeShortcuts;
     private ImageKeyboardEditText editText;
@@ -36,6 +35,21 @@ public class MainActivity extends AppCompatActivity implements ImageKeyboardEdit
                         .buildDynamicShortcuts(editText.getText().toString().split(", "));
             }
         });
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        if (getIntent().getData() != null) {
+            // handle the URI with the data. You may have different logic than just
+            // getting the last path segment
+            String data = getIntent().getData().getLastPathSegment();
+            Toast.makeText(this, "Clicked: " + data, Toast.LENGTH_SHORT).show();
+
+            // ensure you clear the data or else this will get done any time you open the app.
+            getIntent().setData(null);
+        }
     }
 
     @Override
