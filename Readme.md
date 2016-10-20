@@ -1,5 +1,7 @@
 # Nougat Playground
 
+[!app](artwork/app.png)[!shortcuts](artwork/shortcuts.png)
+
 Just a demo of some of the Nougat features:
 
 - Dynamic and Static Launcher Shortcuts
