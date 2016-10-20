@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:icon="@drawable/ic_shortcut"
+        android:enabled="true"
+        android:shortcutId="static-shortcut-1"
+        android:shortcutShortLabel="@string/static_shortcut_message"
+        android:shortcutLongLabel="@string/static_shortcut_message"
+        tools:targetApi="n_mr1">
+
+        <intent
+            android:targetPackage="xyz.klinker.nougatplayground"
+            android:action="android.intent.action.VIEW"
+            android:targetClass="xyz.klinker.nougatplayground.MainActivity"
+            android:data="http://example.com/some_data_uri" />
+
+        <!-- seems like the conversation category is the only one at this point? -->
+        <categories android:name="android.shortcut.conversation" />
+
+    </shortcut>
+
+</shortcuts>
