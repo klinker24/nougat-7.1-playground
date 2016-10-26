@@ -12,7 +12,7 @@ Just a demo of some of the Nougat features:
 
 This one is easy enough to add, just add the icon to your `res` folder, then add it to your `AndroidManifest.xml`:
 
-```
+```xml
 <application
         tools:ignore="ManifestResource"
         android:allowBackup="true"
@@ -29,7 +29,7 @@ This one is easy enough to add, just add the icon to your `res` folder, then add
 
 Fist add the following in the `AndroidManifest.xml`. It should be a child of your launcher activity:
 
-```
+```xml
 <meta-data
        android:name="android.app.shortcuts"
        android:resource="@xml/shortcuts"/>
@@ -41,7 +41,7 @@ After adding that, create a `shortcuts.xml` file within your `/res/xml/` directo
 
 This can be a starting point, but you will need to customize it for your own app, icons, and intents.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <shortcuts xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
